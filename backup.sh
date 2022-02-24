@@ -3,7 +3,7 @@
 NOW=$(date +"%Y-%m-%dT%H:%M:%SZ")
 FILE="/backups/$NOW.sql.gz"
 
-echo "Creating dump of ${MYSQL_DATABASE} database from ${DB_HOST}..."
+echo "Creating dump of ${MYSQL_DATABASE} database from ${MYSQL_HOST}..."
 TEMP_FILE=$(mktemp)
 mysqldump -h $MYSQL_HOST -u $MYSQL_USER -p$MYSQL_PASSWORD --port=$MYSQL_PORT $MYSQL_DATABASE > $TEMP_FILE || exit 4
 cat $TEMP_FILE | gzip > $FILE || exit 
