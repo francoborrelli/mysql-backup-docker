@@ -31,3 +31,7 @@ if [ ! -z "$MAIL_TO" ]; then
         --body "Automated backups " \
         --attach $FILE || exit 5
 fi
+
+if [ ! -z "$MAIL_TO" ] || [ ! -z "$BUCKET" ]; then
+  rm $FILE
+fi
