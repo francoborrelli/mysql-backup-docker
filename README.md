@@ -1,5 +1,10 @@
 # mysql-backup-docker
 
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+
 A background backup utility for MySQL and Mariadb. It allows uploading backups to AWS S3.
 
 ## 🐳 Docker compose example
@@ -17,7 +22,7 @@ services:
       MYSQL_PASSWORD: test-pwd
 
   backup:
-    image: registry.gitlab.com/gral/backups/mysql-backup-docker
+    image: ghcr.io/francoborrelli/mysql-backup-docker:master
     restart: always
     environment:
       MYSQL_DATABASE: database
