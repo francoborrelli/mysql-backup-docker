@@ -4,9 +4,11 @@ LABEL maintainer="Franco Borrelli <francoborrelli96@gmail.com>"
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> '/etc/apk/repositories'
 
-RUN apk --no-cache update && \
-  apk --no-cache add ca-certificates groff less mysql-client mailutils awscli swaks && \
-  rm -rf /var/cache/apk/*
+RUN apk --no-cache update
+
+RUN apk --no-cache add ca-certificates groff less mysql-client mailutils swaks aws-cli
+
+RUN rm -rf /var/cache/apk/*
 
 RUN mkdir -p /backups
 ADD backup.sh /usr/bin/backup
