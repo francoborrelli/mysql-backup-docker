@@ -1,12 +1,11 @@
 FROM alpine:latest
 
-LABEL maintainer="Franco Borrelli <fborrelli@gralsaneamiento.com.ar>"
+LABEL maintainer="Franco Borrelli <francoborrelli96@gmail.com>"
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> '/etc/apk/repositories'
 
 RUN apk --no-cache update && \
-  apk --no-cache add ca-certificates groff less python3 py3-pip mysql-client mailutils swaks && \
-  pip3 --no-cache-dir install awscli && \
+  apk --no-cache add ca-certificates groff less mysql-client mailutils awscli swaks && \
   rm -rf /var/cache/apk/*
 
 RUN mkdir -p /backups

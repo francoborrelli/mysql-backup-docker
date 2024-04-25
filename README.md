@@ -1,8 +1,8 @@
 # mysql-backup-docker
 
-A background backup utility for MySQL and AWS S3
+A background backup utility for MySQL and Mariadb. It allows uploading backups to AWS S3.
 
-Docker compose example
+## 🐳 Docker compose example
 
 ```yml
 version: '3'
